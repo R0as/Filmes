@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/movie', [MovieController::class, 'index'])->name('movie.index');
+
+
+Route::resource('movie',MovieController::class);
+
+
+//Model-View-Controller MVC(layour do resultado que o laravel te retorna a partir do controller)
