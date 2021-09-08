@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Models\Movie;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Storage;
 
 
@@ -18,8 +17,23 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();//a variavel guarda os objetos do banco de dados
-        return view('movies', compact('movies'));
+        $search = request('search');
+
+        if($search){
+
+            $movies = Movie::where([
+                ['title','like','%'.$search.'%']])
+                ->orwhere([['genre','like','%'.$search.'%']])
+                ->orwhere([['release','like','%'.$search.'%']])
+                ->orwhere([['rating','like','%'.$search.'%']])
+                ->get();
+
+        }else{
+            $movies = Movie::all();//a variavel guarda os objetos do banco de dados
+        }
+        
+        
+        return view('movies', ['movies'=>$movies,'search'=>$search]);
 
         
     }
@@ -105,6 +119,11 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        if(!$movie = Movie::find($id))
+            return redirect()->back();
+        
+        $movie->delete();
+        return redirect(route('movie.index'));
+        
+    }    
 }

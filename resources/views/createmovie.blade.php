@@ -7,6 +7,7 @@
     <title>Criar Filme | Adapti PS</title>
 </head>
 <body>
+    <a href="{{ route('movie.index') }}"><button>Voltar</button></a>
     <form id="form-create" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" name="title" placeholder="Título"required>
@@ -20,8 +21,7 @@
         <input type="text" name="rating" placeholder="nota"required>
         <textarea name="synopsis" id="synopsis" cols="30" rows="10"></textarea>
         <input type="file" name="image" accept="image/*" required>
-        <button type="submit">Salvar</button>
-        <a href="{{ route('movie.index') }}">Voltar</a>
+        <button type="submit">Salvar</button>        
     </form>
 </body>
 </html>

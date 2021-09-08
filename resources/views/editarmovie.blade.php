@@ -22,7 +22,7 @@
         <textarea name="synopsis" id="synopsis" cols="30" rows="10">{{$movie->synopsis}}</textarea>
         <input value="storage/{{ $movie->image }}"type="file" name="image" accept="image/*">
         <button type="submit">Salvar</button>
-        <a href="{{ route('movie.index') }}">Voltar</a>
+        <a href="{{ route('movie.index') }}"><button>Voltar</button></a>
     </form>
 </body>
 </html>
