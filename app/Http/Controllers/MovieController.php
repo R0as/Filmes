@@ -122,7 +122,8 @@ class MovieController extends Controller
         if(!$movie = Movie::find($id))
             return redirect()->back();
         
-        $movie->delete();
+            Storage::delete('public/' .$movie->image);//deletar as imagens do programa para nao ficarem salvas
+            $movie->delete();
         return redirect(route('movie.index'));
         
     }    
