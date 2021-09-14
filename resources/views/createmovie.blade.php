@@ -1,32 +1,39 @@
-@extends('template')
+@extends('layouts.template')
 
 @section('title')
     Create Movies | Adapti
 @endsection
 
 
-@section('action')
-    <h2>Criar filme</h2>
-@endsection
-
-@section('botoes')
-    <a class="btn" href="{{ route('movie.index') }}"><button>Inicio</button></a>
-@endsection
 
 @section('content')
-    <form class="form" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
+    <form class="form" id="form-create" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input class="input" type="text" name="title" placeholder="Título"required>
-        <input class="input" type="text" name="genre" placeholder="Genero"required>
-        <select class = "opcao" name="country_id" id="country_id">
+        <label for="title">Título:</label>
+        <input id = "title"class="input-create" type="text" name="title" placeholder="Título"required>
+        
+        <label for="genre">Genêro:</label>
+        <input id = "genre" class="input-create" type="text" name="genre" placeholder="Genero"required>
+        
+        <label for="country">País:</label>
+        <select id="country" class = "opcao" name="country_id" id="country_id">
             @foreach($countries as $country)
                 <option class = "opcao" value="{{ $country->id }}">{{ $country->name }}</option>
             @endforeach
         </select>
-        <input class="input" type="text" name="release" placeholder="Data de lançamento"required>
-        <input class="input" type="text" name="rating" placeholder="nota"required>
-        <textarea class = "sinopse" name="synopsis" id="synopsis" cols="30" rows="10"></textarea>
-        <input class="input" type="file" name="image" accept="image/*" required>
-        <button class="btn" type="submit">Salvar</button>        
+
+        <label for="release">Data de lançamento:</label>
+        <input id="release" class="input-create" type="date" name="release" placeholder="Data de lançamento"required>
+        
+        <label for="rating">Nota:</label>
+        <input id="rating" class="input-create" type="text" name="rating" placeholder="nota"required>
+        
+        <label for="sinopse">Sinopse:</label>
+        <textarea id= "sinopse" class = "sinopse" name="synopsis" id="synopsis" cols="25" rows="5"></textarea>
+        
+        <label for="image">Imagem:</label>
+        <input id="image" class="input-create" type="file" name="image" accept="image/*" required>
+        <button class="btn-submit" type="submit">Criar filme</button>  
+        <a class="btn-back-form" href="{{ route('movie.index') }}">voltar</a>       
     </form>
 @endsection

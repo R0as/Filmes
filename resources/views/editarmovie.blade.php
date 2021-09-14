@@ -1,33 +1,46 @@
-@extends('template')
+@extends('layouts.template')
 
 @section('title')
     Edit Movies | Adapti
 @endsection
 
-@section('action')
-    <h2 class ="sub" >Editar filme</h2>
-@endsection
 
-@section('botoes')
-    <a class="btn" href="{{ route('movie.create') }}"><button>Criar Filme</button></a>  
-    <a class="btn" href="{{ route('movie.index') }}"><button>Inicio</button></a>
-@endsection
 
 @section('content')
     <form class="form" action="{{ route('movie.update',$movie->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <input class = "input" value="{{$movie->title}}" type="text" name="title" placeholder="Título"required >
-        <input class = "input" value="{{$movie->genre}}"type="text" name="genre" placeholder="Genero"required>
-        <select class = "opcao" value="{{$movie->country_id}}"name="country_id" >
+        <label for="title">Título:</label>
+        <input id="title"class = "input-edit" value="{{$movie->title}}" type="text" name="title" placeholder="Título"required >
+        
+        <label for="genre">Genêro:</label>
+        <input id = "genre "class = "input-edit" value="{{$movie->genre}}"type="text" name="genre" placeholder="Genero"required>
+        
+        <label for="country">País:</label>
+        <select id="country" class = "opcao" value="{{$movie->country_id}}"name="country_id" >
             @foreach($countries as $country)
                 <option class = "opcao" value="{{ $country->id }}">{{ $country->name }}</option>
             @endforeach
         </select>
-        <input class = "input" value="{{$movie->release}}"type="text" name="release" placeholder="Data de lançamento"required>
-        <input class = "input" value="{{$movie->rating}}"type="text" name="rating" placeholder="nota"required>
-        <textarea class = "sinopse" name="synopsis"  cols="30" rows="10">{{$movie->synopsis}}</textarea>
-        <input input="input"value="storage/{{ $movie->image }}"type="file" name="image" accept="image/*">
-        <button class="btn"type="submit">Salvar</button>
+        
+        <label for="release">Data de lançamento:</label>
+        <input id="release" class = "input-edit" value="{{$movie->release}}"type="text" name="release" placeholder="Data de lançamento"required>
+        
+        <label for="rating">Nota:</label>
+        <input id="rating"class = "input-edit" value="{{$movie->rating}}"type="text" name="rating" placeholder="nota"required>
+        
+        <label for="sinopse">Sinopse:</label>
+        <textarea id= "sinopse" class = "sinopse" name="synopsis"  cols="30" rows="10">{{$movie->synopsis}}</textarea>
+        
+        <label for="image">Imagem:</label>
+        <input id="image" input="input-edit"value="storage/{{ $movie->image }}"type="file" name="image" accept="image/*">
+        <img src="/storage/{{ $movie->image }}" style="width:100px;height:100px;" alt="poster do filme {{$movie->title}}">
+        <button class="btn-submit"type="submit">Editar filme</button>
+        <a class="btn-back-form" href="{{ route('movie.index') }}">voltar</a>
+    </form>
+    <form class = "form" action="{{ route('movie.destroy',$movie->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <button class="btn" type="submit">Apagar</button>
     </form>
 @endsection
