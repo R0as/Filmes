@@ -7,6 +7,7 @@
 
 
 @section('content')
+<section class="form-section">
     <form class="form" action="{{ route('movie.update',$movie->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -43,4 +44,5 @@
         @method('DELETE')
         <button class="btn" type="submit">Apagar</button>
     </form>
+</section>
 @endsection

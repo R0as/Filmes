@@ -7,6 +7,7 @@
 
 
 @section('content')
+<section class="form-section">
     <form class="form" id="form-create" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="title">Título:</label>
@@ -36,4 +37,5 @@
         <button class="btn-submit" type="submit">Criar filme</button>  
         <a class="btn-back-form" href="{{ route('movie.index') }}">voltar</a>       
     </form>
+</section>
 @endsection
