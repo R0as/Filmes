@@ -1,0 +1,54 @@
+:root{
+    --green:#009432;
+    --black:#000;
+    --white:#fff;
+    --gray:#f6f4f1;
+}
+body{
+    position: relative;
+    /* height: 100%; */
+    background-color: var(--gray);
+  }
+.titulo-create {
+    font-size: 40px;
+    text-align: center;
+    user-select: none;
+    color: var(--black);
+}
+
+.form-section{
+    padding: 1rem;
+    background-color: var(--gray);
+    font-family: 'ubuntu';
+}
+
+.inputs,.inputs-select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.inputs input,.inputs-select select,.inputs-select input,.inputs-select textarea{
+    border-radius: 5px;
+}
+
+.inputs input{
+    height: 30px;
+    width: 200px;
+    padding: 5px;
+}
+.inputs-select input,.inputs-select select{
+    height: 30px;
+    width: 200px;
+}
+.inputs-select textarea{
+    height: 80;
+    width: 200;
+    padding: 5px;
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}

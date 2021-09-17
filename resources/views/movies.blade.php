@@ -10,7 +10,7 @@
         <div class="form-search">
             <form action="/movie" method="GET">
                 @csrf
-                <input type="text" name="search" placeholder="Pesquisar:" class="input-search" required />
+                <input type="search" name="search" placeholder="Pesquisar:" class="input-search" required />
                 <button class="btn-search" type="submit">Pesquisar</button>
             </form>
         </div>

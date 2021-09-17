@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>@yield('title')</title>
+    <link  rel="shortcut icon" href="{{ asset("img/logo.ico") }}">
 
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href={{ asset("/css/reset.css") }}>
     <link rel="stylesheet" href={{ asset("/css/styles.css") }}>
@@ -20,7 +21,7 @@
 
     <style>
         * {
-            font-family: "IBM+Plex+Sans+Arabic";
+            font-family: "Ubuntu";
         }
 
     </style>
@@ -30,9 +31,7 @@
 <body>
     <header class="header">
         <nav class="navbar">
-            <h6 class="name-site">Filmes do ben10
-                {{-- <img src="logo.jpg" alt="omnitrix">     --}}
-            </h6>
+               <a href="{{ route('movie.index') }}"> <img class="logo" src="{{ asset("img/titulo.png") }}" alt="omnitrix" ></a>    
             
             <ul class="nav-list">
                 <li><a class="btn-nav efeito" href="{{ route('movie.index') }}">Início</a></li>
@@ -44,16 +43,18 @@
         @yield('content')
     </main>
     <footer>
-        <div class="footer-content">
-            <h3 class="footer_text">Ben10 soluções</h3>
-            <ul class="socials">
-                <li><a href="https://www.instagram.com/henriqueroas__/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://github.com/R0as"><i class="fa fa-github"></i></a></li>
-                <li><a href="https://twitter.com/henriqueroas"><i class="fa fa-twitter"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2021 Adaptips. designed by <span>Henrique Roas</span></p>
+        <div class="footer-card">
+            <div class="footer-content">
+                <h3 class="footer_text">Ben10 soluções</h3>
+                <ul class="socials">
+                    <li><a target="_blank"href="https://www.instagram.com/henriqueroas__/"><i class="fa fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://github.com/R0as"><i class="fa fa-github"></i></a></li>
+                    <li><a target="_blank"href="https://twitter.com/henriqueroas"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy;2021 Adaptips. designed by <span>Henrique Roas</span></p>
+            </div>
         </div>
     </footer>
 </body>

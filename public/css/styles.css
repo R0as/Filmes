@@ -13,32 +13,25 @@ html{
   width: 100%;
 }
 
-.form-section{
-  height: 100vh;
-}
-
 .content{
-  padding-top: 1.25rem;
-  padding-bottom:4.6875rem;
+  padding-top: 20px;
+  padding-bottom:75px;
 }
 /*navbar aqui*/
-
-
-.name-site{
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13rem;
-}
+.logo{
+  width: 150px;
+  height: 150px;
+} 
 
 nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: system-ui,
-  -apple-system,Helvetica,Arial,sans-serif;
+  font-family: 'ubuntu';
   background: var(--green);
   height: 8vh;
-  border-bottom: 0.0625rem solid var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 10px;
 }
 
 .nav-list{
@@ -47,30 +40,48 @@ nav{
 }
 
 .nav-list li{
-  letter-spacing: 0.13rem;
-  margin-left: 2rem;
+  letter-spacing: 2.08px;
+  margin-left: 32px;
   text-transform: uppercase;
+  padding-top: 14px;
 }
 .nav-list a{
-  font: bold 0.75rem/1.5rem arial, helvetica, sans-aerif;	
-  padding: 0.5rem;
+  font: 'ubuntu';	
+  padding: 8px;
   text-decoration: none;	
   text-align: center;
   color: var(--white);
   background:var(--black) no-repeat center center;
   display: block;
 }
+.nav-list button{
+  font: 'ubuntu';	
+  padding: 8px;
+  text-decoration: none;	
+  text-align: center;
+  color: var(--white);
+  background:var(--black) no-repeat center center;
+  display: block;
+}
+.btn{
+  border: none;
+}
 .btn-nav{
+  display: inline-block;
   text-transform: uppercase;
-  border-radius: 0.625rem;  
+  border-radius: 10px;  
   cursor: pointer;
   transition: all 400ms ease;
+  font-family: 'ubuntu';
 }
 .efeito:hover{
   background: var(--white);
-  box-shadow: inset 0 0 0 0.1875rem var(--black);
+  box-shadow: inset 0 0 0 3px var(--black);
 } 
 .nav-list a:hover { 
+  color:var(--black);
+}
+.nav-list button:hover { 
   color:var(--black);
 }
 
@@ -79,26 +90,25 @@ footer{
   background: var(--green);
   height: auto;
   width: 100%;
-  font-family: "Open Sans";
-  padding-top: 2.5rem;
+  font-family: 'ubuntu';
   color: var(--black);
-  border-top: 0.0625rem solid var(--black);
+  border-top: 1px solid var(--black);
+  padding-top: 40px;
 }
 
-
-.footer-content{
-  display: flex;
+.footer-content{  
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  padding-top: 40px;
 }
 
 .footer-content h3{
-  font-size: 28.8px;
+  font-size: 1.8rem;
   font-weight: 400;
   text-transform: capitalize;
-  line-height: 48px;
+  line-height: 3rem;
 }
 
 .socials{
@@ -106,11 +116,11 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 0 48px 0;
+  margin: 1rem 0 3rem 0;
 }
 
 .socials li{
-  margin: 0 0.625rem;
+  margin: 0 10px;
 }
 
 .socials a{
@@ -119,7 +129,7 @@ footer{
 }
 
 .socials a i{
-  font-size: 17.6px
+  font-size: 1.1rem
 }
 
 .socials a:hover i{
@@ -129,14 +139,14 @@ footer{
 .footer-bottom{
   background: var(--black);
   width: 100%;
-  padding: 1.25rem 0;
+  padding: 20px 0;
   text-align: center;
 }
 
 .footer-bottom p{ 
   color: var(--white);
-  font-size: 0.875rem;
-  word-spacing: 0.125rem;
+  font-size: 14px;
+  word-spacing: 2px;
   text-transform: capitalize;
 }
 
@@ -145,14 +155,14 @@ footer{
   opacity: 4;
   font-weight: 200;
 }
-/* 
+
 .info{
-  width: 9.375rem;
-  height: 12.5rem;
+  width: 150px;
+  height: 200px;
   background-color: var(--green);
   color: var(--black);
-  padding: 3.125rem;
-  margin: 0.9375rem;
-  border: 0.125rem solid var(--black);
+  padding: 50px;
+  margin: 15px;
+  border: 2px solid var(--black);
   overflow: hidden;
-}  */
+}
