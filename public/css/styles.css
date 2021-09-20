@@ -2,6 +2,7 @@
   --green:#009432;
   --black:#000;
   --white:#fff;
+  --gray:#f6f4f1;
 }
 *{
   margin: 0;
@@ -12,6 +13,18 @@ html{
   height: 100%;
   width: 100%;
 }
+body{
+  width: 100%;
+  height: 100%;
+  font-family: 'ubuntu';
+  background-color: var(--gray);
+  color: var(--black);
+
+}
+.container{
+  height: auto;
+}
+
 
 .content{
   padding-top: 20px;
@@ -36,7 +49,7 @@ nav{
 
 .nav-list{
   list-style: none;
-  display: flex;
+  display:flex;
 }
 
 .nav-list li{
@@ -53,6 +66,18 @@ nav{
   color: var(--white);
   background:var(--black) no-repeat center center;
   display: block;
+}
+.inicio{
+  font: 'ubuntu';	
+  padding: 8px;
+  text-decoration: none;	
+  text-align: center;
+  color: var(--white);
+  background:var(--black) no-repeat center center;
+  display: block;
+}
+.inicio:hover{
+  color: var(--black);
 }
 .nav-list button{
   font: 'ubuntu';	
@@ -93,7 +118,8 @@ footer{
   font-family: 'ubuntu';
   color: var(--black);
   border-top: 1px solid var(--black);
-  padding-top: 40px;
+  padding-top: 43px;
+  position: absolute;
 }
 
 .footer-content{  
@@ -105,10 +131,10 @@ footer{
 }
 
 .footer-content h3{
-  font-size: 1.8rem;
+  font-size: 28.8px;
   font-weight: 400;
   text-transform: capitalize;
-  line-height: 3rem;
+  line-height: 48px;
 }
 
 .socials{
@@ -116,7 +142,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0 3rem 0;
+  margin: 16px 0 48px 0;
 }
 
 .socials li{
@@ -129,7 +155,7 @@ footer{
 }
 
 .socials a i{
-  font-size: 1.1rem
+  font-size: 17.6px;
 }
 
 .socials a:hover i{
@@ -156,13 +182,142 @@ footer{
   font-weight: 200;
 }
 
-.info{
-  width: 150px;
-  height: 200px;
+/* search bar */
+.form-search{
+  padding-top: 50px;
+  padding-left: 10px;
+  left: 50px;
+}
+.input-search{
+  position: relative;
+  height:50px ;
+  width: 260px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: .5s;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+}
+.btn-search{
+  position: relative;
+  border-radius:0 5px 5px 0;
+  height:50px ;
+  width: 40px; 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background:var(--black) ;
+  color: var(--white);
+  top: -1px;
+  left: -5px;
+}
+.btn-search:hover{
+  color: var(--black);
+  transition: all 400ms ease;
+}
+
+
+/* movie index */
+ .card{
+  padding-top: 5px;
+  text-align: center;
+  width: 210px;
+  height: 530px;
   background-color: var(--green);
   color: var(--black);
   padding: 50px;
   margin: 15px;
+  border-radius: 20px;
   border: 2px solid var(--black);
   overflow: hidden;
+  position: relative;
+  transition-property: 0.5s ease;
+  transition-duration: 1s;
+
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 5px 5px 10px var(--black);
+}
+.img{
+  height: 250px;
+  width: 175px;
+  transition-property: 0.5s ease;
+  cursor: pointer;
+  transition-duration: 1s;
+  border-radius: 10px;
+}
+.img:hover{
+  transform: scale(1.6);
+  box-shadow: 5px 5px 10px var(--black);
+}
+.titulo{
+  font-size: 65px;
+  text-align:center;
+  color: var(--black);
+}
+
+.flexbox{
+  display: grid; 
+  padding-bottom: 15px;
+  padding-top: 10px;
+  grid-template-columns: repeat(auto-fill,minmax(400px,2fr));
+  gap:50px;
+  margin-left: 13px;
+  min-height: 100vh;
+  height: auto;
+}
+
+.barra-de-pesquisa{
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.movie-title{
+  font-size: 30px;
+  padding-top: 10px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.info{
+  text-align:justify;
+}
+.text{
+  padding-bottom: 10px;
+}
+.options{
+  float: right;
+  padding-bottom: 10px;
+  color: var(--black);
+}
+.options:hover{
+  color: var(--white);
+}
+.btn-edit{
+  float: right;
+  height: 30px;
+  width: 40px;
+  padding-right: 25px;
+}
+.options{
+  border: none;
+  background-color: var(--green);
+  color: var(--black);
+  padding-left: 10px;
+  font-size: 23px;
+}
+.options:hover {
+  color: var(--white);
+  cursor:pointer;
+}
+.edit{
+  font-size: 23px;
+  float:initial;
+}
+.not-found{
+  font-size: 17px;
+  padding-left: 15px;
+  width: 50%;
 }

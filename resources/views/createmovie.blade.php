@@ -39,13 +39,13 @@
                     </div>
                     
                     <div class="inputs">
-                        <label for="rating">Nota:</label><br><input id="rating" class="input-rating" type="text" name="rating"
+                        <label for="rating">Nota:</label><br><input id="rating" class="input-rating" type="number" name="rating"
                             required>
                     </div>
 
                     <div class="inputs-select">
                         <label for="sinopse">Sinopse:</label><br><br><textarea style="resize: none" id="sinopse" class="sinopse" name="synopsis"
-                            id="synopsis" cols="25" rows="5"></textarea>
+                            id="synopsis" cols="25" rows="5" maxlength="256"></textarea>
                     </div>
 
                     <div class="inputs-select">

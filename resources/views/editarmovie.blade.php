@@ -28,29 +28,29 @@
 
                 <div class="inputs-select">
                     <label for="country">País:</label><br>
-                    <select id="country" class="opcao" value="{{ $movie->country_id }}" name="country_id">
+                    <select id="country" class="opcao" value="" name="country_id">
                         @foreach ($countries as $country)
-                            <option class="opcao" value="{{ $country->id }}">{{ $country->name }}</option>
+                            <option class="opcao" {{ $country->id==$movie->country_id ? 'selected': '' }} value="{{ $country->id }}">{{ $country->name }} </option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="inputs-select">
                     <label for="release">Data de lançamento:</label><br>
-                    <input id="release" class="input-edit" value="{{ $movie->release }}" type="text" name="release"
+                    <input id="release" class="input-edit" value="{{ $movie->release }}" type="date" name="release"
                         placeholder="Data de lançamento" required>
                 </div>
 
                 <div class="inputs">
                     <label for="rating">Nota:</label><br>
-                    <input id="rating" class="input-edit" value="{{ $movie->rating }}" type="text" name="rating"
+                    <input id="rating" class="input-edit" value="{{ $movie->rating }}" type="number" name="rating"
                         placeholder="nota" required>
                 </div>
 
                 <div class="inputs-select">
                     <label for="sinopse">Sinopse:</label><br>
                     <textarea style="resize: none" id="sinopse" class="sinopse" name="synopsis" cols="30"
-                        rows="10">{{ $movie->synopsis }}</textarea>
+                        rows="10" maxlength="256">{{ $movie->synopsis }}</textarea>
                 </div>
 
                 <div class="inputs-select">
@@ -60,23 +60,24 @@
                     <img src="/storage/{{ $movie->image }}" style="width:100px;height:100px;"
                         alt="poster do filme {{ $movie->title }}">
                 </div>
+                
                 <div class="button-inputs">
                     <ul class="nav-list">
-                        <li><button class="btn btn-nav efeito" type="submit">Editar filme</button></li>
-                        <li><form class="form" action="{{ route('movie.destroy', $movie->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-nav efeito" type="submit">Apagar</button>
-                            <li><a class="btn-nav efeito" href="{{ route('movie.index') }}">voltar</a></li>
-                        </form>
-                    </li>
+                        <li><form action="" method="POST" enctype="multipart/form-data"action="{{ route('movie.update', $movie->id) }}">
+                            @method('PUT')
+                            <button class="btn btn-nav efeito" type="submit"action="{{ route('movie.update', $movie->id) }}">Editar filme</button>
+                        </form></li>
+                        <li>
+                            <form class="form" action="{{ route('movie.destroy', $movie->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-nav efeito" type="submit">Apagar filme</button>
+                            </form>
+                        </li>
+                        <li><a class="btn-nav efeito" href="{{ route('movie.index') }}">voltar</a></li>
                     </ul>
                 </div>
             </div>
         </form>
-        <ul class="nav-list">
-            
-        </ul>
-
     </section>
 @endsection

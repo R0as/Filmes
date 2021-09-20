@@ -47,9 +47,9 @@
             <div class="footer-content">
                 <h3 class="footer_text">Ben10 soluções</h3>
                 <ul class="socials">
-                    <li><a target="_blank"href="https://www.instagram.com/henriqueroas__/"><i class="fa fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/henriqueroas__/"><i class="fa fa-instagram"></i></a></li>
                     <li><a target="_blank" href="https://github.com/R0as"><i class="fa fa-github"></i></a></li>
-                    <li><a target="_blank"href="https://twitter.com/henriqueroas"><i class="fa fa-twitter"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/henriqueroas"><i class="fa fa-twitter"></i></a></li>
                 </ul>
             </div>
             <div class="footer-bottom">
